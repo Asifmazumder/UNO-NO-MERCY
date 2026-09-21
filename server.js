@@ -1,6 +1,6 @@
 
 const express=require("express"),http=require("http"),{WebSocketServer}=require("ws"),crypto=require("crypto");
-const app=express(),server=http.createServer(app),wss=new WebSocketServer({server});app.use(express.static(__dirname+"/public"));
+const app=express(),server=http.createServer(app),wss=new WebSocketServer({server,path:'/ws'});app.use(express.static(__dirname+"/public"));
 const rooms=new Map(),colors=["red","yellow","green","blue"],actions=["skip","reverse","draw2"];
 const id=()=>crypto.randomBytes(5).toString("hex");
 const card=(c,v)=>({c,v,id:id()});
@@ -26,4 +26,5 @@ wss.on("connection",ws=>{let p=null,r=null;
  else if(m.type==="newhost"&&p.id===r.host){let q=r.players.find(x=>x.id===m.id);if(q)r.host=q.id;broadcast(r)}
  });
  ws.on("close",()=>{if(!p||!r)return;p.ws=null;if(!r.started&&!r.winner){r.players=r.players.filter(x=>x.id!==p.id);if(r.host===p.id)r.host=r.players[0]?.id||null;if(!r.players.length)rooms.delete(r.code)}broadcast(r)})});
-server.listen(process.env.PORT||3000);
+const PORT=process.env.PORT||3000;
+server.listen(PORT,'0.0.0.0',()=>console.log(`UNO Homies server listening on ${PORT}`));
