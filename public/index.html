@@ -1,36 +1,1268 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#062d20"><title>UNO Homies Online</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#062d20">
+<title>UNO NO MERCY • ASIF MOZUMDER</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 20%,#0d8b59,#03291d 75%);color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}button,input{font:inherit}button{border:0;border-radius:14px;padding:13px 17px;font-weight:900;cursor:pointer}button:active{transform:scale(.97)}input{width:100%;padding:14px;border:1px solid #ffffff22;border-radius:14px;background:#062f23;color:#fff;margin:6px 0;outline:0}.app{max-width:980px;margin:auto;padding:14px}.brand{text-align:center;font-size:58px;font-weight:1000;font-style:italic;color:#ffe000;text-shadow:4px 4px #e31b23;letter-spacing:-5px}.panel{background:#052f23dd;border:1px solid #ffffff18;border-radius:26px;padding:20px;margin:12px 0;box-shadow:0 18px 50px #0005}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.primary{background:#ffe000;color:#17220f}.secondary{background:#fff;color:#063523}.danger{background:#e21c2a;color:#fff}.muted{color:#bce5d5}.hidden{display:none!important}.code{font-size:40px;letter-spacing:9px;font-weight:1000;text-align:center}.players{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.player{padding:12px;background:#074a35;border-radius:16px;border:2px solid transparent}.player.me{border-color:#ffe000}.player.active{box-shadow:0 0 0 2px #fff}.game{background:radial-gradient(circle,#0b8756,#06603c);border:6px solid #043a29;border-radius:30px;padding:15px;min-height:570px;box-shadow:inset 0 0 50px #0005}.status{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-bottom:12px}.pill{background:#052f23;padding:8px 12px;border-radius:99px;font-size:13px}.tabletop{min-height:260px;display:flex;align-items:center;justify-content:center;gap:28px;position:relative}.topcard{width:92px;height:134px}.card{width:68px;height:100px;border:3px solid #fff;border-radius:12px;box-shadow:0 7px 14px #0008;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.14s}.card:hover{transform:translateY(-9px) rotate(-1deg)}.inner{width:51px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:1000;transform:rotate(-28deg);text-shadow:1px 2px #0009}.topcard .inner{width:67px;height:103px;font-size:42px}.red{background:#ed1c24}.yellow{background:#ffdf00;color:#111}.green{background:#00a651}.blue{background:#0876bc}.wild{background:#171717}.wild .inner{background:conic-gradient(#ed1c24 0 25%,#ffdf00 25% 50%,#00a651 50% 75%,#0876bc 75%);color:#fff}.hand{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;padding:12px 3px}.small{font-size:13px}.message{text-align:center;min-height:28px;color:#e9fff5}.overlay{position:fixed;inset:0;background:#000b;display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}.modal{max-width:440px;width:100%;background:#063b2b;border:1px solid #ffffff2b;border-radius:24px;padding:25px;text-align:center;box-shadow:0 20px 80px #000}.colors{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.c-red{background:#ed1c24;color:#fff}.c-yellow{background:#d7b900;color:#111}.c-green{background:#00a651;color:#fff}.c-blue{background:#0876bc;color:#fff}.footer{text-align:center;color:#9ccdbd;font-size:12px;margin:16px}.copy{font-size:13px;color:#cdeee2}.winner{font-size:34px;font-weight:1000}
-@media(max-width:650px){.players{grid-template-columns:repeat(2,1fr)}.brand{font-size:48px}.game{min-height:500px}.card{width:55px;height:82px}.inner{width:41px;height:62px;font-size:27px}.topcard{width:78px;height:114px}.topcard .inner{width:58px;height:88px;font-size:35px}.tabletop{min-height:210px;gap:15px}}
-</style></head><body><main class="app">
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:radial-gradient(circle at 50% 20%,#0d8b59,#03291d 75%);
+  color:#fff;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  min-height:100vh;
+}
+
+button,input{
+  font:inherit;
+}
+
+button{
+  border:0;
+  border-radius:14px;
+  padding:13px 17px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+button:active{
+  transform:scale(.97);
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:1px solid #ffffff22;
+  border-radius:14px;
+  background:#062f23;
+  color:#fff;
+  margin:6px 0;
+  outline:0;
+}
+
+.app{
+  max-width:980px;
+  margin:auto;
+  padding:14px;
+}
+
+.brand{
+  text-align:center;
+  font-size:58px;
+  font-weight:1000;
+  font-style:italic;
+  color:#ffe000;
+  text-shadow:4px 4px #e31b23;
+  letter-spacing:-5px;
+}
+
+.edition{
+  text-align:center;
+  font-weight:1000;
+  letter-spacing:3px;
+  color:#ffe000;
+  margin-top:-8px;
+}
+
+.creator{
+  text-align:center;
+  font-size:12px;
+  color:#bce5d5;
+  margin:5px 0 15px;
+  letter-spacing:1px;
+}
+
+.panel{
+  background:#052f23dd;
+  border:1px solid #ffffff18;
+  border-radius:26px;
+  padding:20px;
+  margin:12px 0;
+  box-shadow:0 18px 50px #0005;
+}
+
+.actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.primary{
+  background:#ffe000;
+  color:#17220f;
+}
+
+.secondary{
+  background:#fff;
+  color:#063523;
+}
+
+.danger{
+  background:#e21c2a;
+  color:#fff;
+}
+
+.muted{
+  color:#bce5d5;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.code{
+  font-size:40px;
+  letter-spacing:9px;
+  font-weight:1000;
+  text-align:center;
+}
+
+.players{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+
+.player{
+  padding:12px;
+  background:#074a35;
+  border-radius:16px;
+  border:2px solid transparent;
+}
+
+.player.me{
+  border-color:#ffe000;
+}
+
+.player.active{
+  box-shadow:0 0 0 2px #fff;
+}
+
+.game{
+  background:radial-gradient(circle,#0b8756,#06603c);
+  border:6px solid #043a29;
+  border-radius:30px;
+  padding:15px;
+  min-height:570px;
+  box-shadow:inset 0 0 50px #0005;
+}
+
+.status{
+  display:flex;
+  justify-content:center;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
+.pill{
+  background:#052f23;
+  padding:8px 12px;
+  border-radius:99px;
+  font-size:13px;
+}
+
+.tabletop{
+  min-height:260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  position:relative;
+}
+
+.card{
+  width:68px;
+  height:100px;
+  border:3px solid #fff;
+  border-radius:12px;
+  box-shadow:0 7px 14px #0008;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:.14s;
+}
+
+.card:hover{
+  transform:translateY(-9px) rotate(-1deg);
+}
+
+.inner{
+  width:51px;
+  height:76px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  font-weight:1000;
+  transform:rotate(-28deg);
+  text-shadow:1px 2px #0009;
+}
+
+.topcard{
+  width:92px;
+  height:134px;
+}
+
+.topcard .inner{
+  width:67px;
+  height:103px;
+  font-size:42px;
+}
+
+.red{
+  background:#ed1c24;
+}
+
+.yellow{
+  background:#ffdf00;
+  color:#111;
+}
+
+.green{
+  background:#00a651;
+}
+
+.blue{
+  background:#0876bc;
+}
+
+.wild{
+  background:#171717;
+}
+
+.wild .inner{
+  background:conic-gradient(
+    #ed1c24 0 25%,
+    #ffdf00 25% 50%,
+    #00a651 50% 75%,
+    #0876bc 75%
+  );
+  color:#fff;
+}
+
+.hand{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:6px;
+  padding:12px 3px;
+}
+
+.small{
+  font-size:13px;
+}
+
+.message{
+  text-align:center;
+  min-height:28px;
+  color:#e9fff5;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:#000b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:10;
+}
+
+.modal{
+  max-width:440px;
+  width:100%;
+  background:#063b2b;
+  border:1px solid #ffffff2b;
+  border-radius:24px;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 20px 80px #000;
+}
+
+.colors{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.c-red{
+  background:#ed1c24;
+  color:#fff;
+}
+
+.c-yellow{
+  background:#d7b900;
+  color:#111;
+}
+
+.c-green{
+  background:#00a651;
+  color:#fff;
+}
+
+.c-blue{
+  background:#0876bc;
+  color:#fff;
+}
+
+.winner{
+  font-size:34px;
+  font-weight:1000;
+}
+
+.footer{
+  text-align:center;
+  color:#9ccdbd;
+  font-size:12px;
+  margin:16px;
+}
+
+@media(max-width:650px){
+
+  .players{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .brand{
+    font-size:48px;
+  }
+
+  .game{
+    min-height:500px;
+  }
+
+  .card{
+    width:55px;
+    height:82px;
+  }
+
+  .inner{
+    width:41px;
+    height:62px;
+    font-size:27px;
+  }
+
+  .topcard{
+    width:78px;
+    height:114px;
+  }
+
+  .topcard .inner{
+    width:58px;
+    height:88px;
+    font-size:35px;
+  }
+
+  .tabletop{
+    min-height:210px;
+    gap:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="app">
+
 <div class="brand">UNO</div>
-<section id="home" class="panel"><h2 style="text-align:center">Play with your homies</h2><input id="name" maxlength="20" placeholder="Your name"><div class="actions"><button class="primary" onclick="createRoom()">Create Room</button></div><div style="text-align:center" class="muted">or join a friend's room</div><input id="codeInput" maxlength="5" placeholder="5-character room code" style="text-transform:uppercase"><div class="actions"><button class="secondary" onclick="joinRoom()">Join Room</button></div><div id="homeMsg" class="message"></div></section>
-<section id="lobby" class="panel hidden"><h2 style="text-align:center">Private Lobby</h2><div class="code" id="roomCode"></div><p class="copy" style="text-align:center">Share this code with your friends. 2–4 players.</p><div id="players" class="players"></div><div class="actions" style="margin-top:15px"><button id="startBtn" class="primary" onclick="startGame()">Start Game</button><button class="secondary" onclick="copyCode()">Copy Code</button><button class="danger" onclick="location.reload()">Leave</button></div><div id="lobbyMsg" class="message"></div></section>
-<section id="game" class="hidden"><div class="status"><span class="pill" id="turnPill"></span><span class="pill" id="colorPill"></span><span class="pill" id="countsPill"></span></div><div class="game"><div class="tabletop"><div id="drawPile" class="card wild"><div class="inner">UNO</div></div><div id="topCard"></div></div><div id="gamePlayers" class="players"></div><div id="hand" class="hand"></div><div class="actions"><button class="secondary" onclick="draw()">Draw</button><button class="primary" onclick="uno()">UNO!</button></div><div id="gameMsg" class="message"></div></div></section>
-<div id="overlay" class="overlay hidden"></div><div class="footer">UNO Homies Online • private room multiplayer</div>
+
+<div class="edition">
+NO MERCY
+</div>
+
+<div class="creator">
+ASIF M EDITION • PLAY WITH YOUR HOMIES
+</div>
+
+<section id="home" class="panel">
+
+<h2 style="text-align:center">
+UNO NO MERCY
+</h2>
+
+<p style="text-align:center" class="muted">
+Private online multiplayer
+</p>
+
+<input
+id="name"
+maxlength="20"
+placeholder="Your name"
+>
+
+<div class="actions">
+
+<button
+class="primary"
+onclick="createRoom()">
+Create Room
+</button>
+
+</div>
+
+<div
+style="text-align:center"
+class="muted">
+
+or join a friend's room
+
+</div>
+
+<input
+id="codeInput"
+maxlength="5"
+placeholder="5-character room code"
+style="text-transform:uppercase"
+>
+
+<div class="actions">
+
+<button
+class="secondary"
+onclick="joinRoom()">
+Join Room
+</button>
+
+</div>
+
+<div
+id="homeMsg"
+class="message">
+</div>
+
+</section>
+
+
+<section
+id="lobby"
+class="panel hidden">
+
+<h2 style="text-align:center">
+Private Lobby
+</h2>
+
+<div
+class="code"
+id="roomCode">
+</div>
+
+<p
+class="copy"
+style="text-align:center">
+
+Share this code with your friends.
+
+<br>
+
+2–4 players • ASIF M EDITION
+
+</p>
+
+<div
+id="players"
+class="players">
+</div>
+
+<div
+class="actions"
+style="margin-top:15px">
+
+<button
+id="startBtn"
+class="primary"
+onclick="startGame()">
+
+Start Game
+
+</button>
+
+<button
+class="secondary"
+onclick="copyCode()">
+
+Copy Code
+
+</button>
+
+<button
+class="danger"
+onclick="location.reload()">
+
+Leave
+
+</button>
+
+</div>
+
+<div
+id="lobbyMsg"
+class="message">
+</div>
+
+</section>
+
+
+<section
+id="game"
+class="hidden">
+
+<div class="status">
+
+<span
+class="pill"
+id="turnPill">
+</span>
+
+<span
+class="pill"
+id="colorPill">
+</span>
+
+<span
+class="pill"
+id="countsPill">
+</span>
+
+</div>
+
+<div class="game">
+
+<div class="tabletop">
+
+<div
+id="drawPile"
+class="card wild">
+
+<div class="inner">
+UNO
+</div>
+
+</div>
+
+<div id="topCard">
+</div>
+
+</div>
+
+
+<div
+id="gamePlayers"
+class="players">
+</div>
+
+
+<div
+id="hand"
+class="hand">
+</div>
+
+
+<div class="actions">
+
+<button
+class="secondary"
+onclick="draw()">
+
+Draw
+
+</button>
+
+<button
+class="primary"
+onclick="uno()">
+
+UNO!
+
+</button>
+
+</div>
+
+
+<div
+id="gameMsg"
+class="message">
+</div>
+
+</div>
+
+</section>
+
+
+<div
+id="overlay"
+class="overlay hidden">
+</div>
+
+
+<div class="footer">
+
+UNO NO MERCY • ASIF M EDITION
+
+<br>
+
+Created by ASIF MOZUMDER • 2026
+
+<br>
+
+Play with your homies
+
+</div>
+
 </main>
+
+
 <script>
-let ws=null,me=null,state=null,roomCode=null;
+
+let ws=null;
+let me=null;
+let state=null;
+let roomCode=null;
+
+
 const $=x=>document.getElementById(x);
-function connect(){if(ws&&ws.readyState===1)return;ws=new WebSocket((location.protocol==='https:'?'wss://':'ws://')+location.host);ws.onopen=()=>{if(window.pending)send(window.pending)};ws.onmessage=e=>handle(JSON.parse(e.data));ws.onclose=()=>msg('Connection lost. Refresh to reconnect.')}
-function send(o){if(ws?.readyState===1)ws.send(JSON.stringify(o));else window.pending=o}
-function name(){return ($('name').value||'Player').trim().slice(0,20)}
-function createRoom(){connect();window.pending={type:'create',name:name()};if(ws.readyState===1)send(window.pending)}
-function joinRoom(){connect();window.pending={type:'join',name:name(),code:$('codeInput').value.trim().toUpperCase()};if(ws.readyState===1)send(window.pending)}
-function handle(m){if(m.type==='error'){msg(m.message);return}if(m.type==='joined'){me=m.playerId;roomCode=m.code;window.pending=null;$('home').classList.add('hidden');$('lobby').classList.remove('hidden');$('roomCode').textContent=roomCode;return}if(m.type==='state'){state=m;render()}}
-function render(){if(!state.started&&!state.winner){renderLobby();return}renderGame()}
-function renderLobby(){ $('lobby').classList.remove('hidden');$('game').classList.add('hidden');$('players').innerHTML=state.players.map(p=>'<div class="player '+(p.id===me?'me':'')+'"><b>'+esc(p.name)+'</b><br><span class="small">'+(p.id===state.host?'HOST · ':'')+(p.connected?'Online':'Offline')+'</span></div>').join('');$('startBtn').disabled=state.players.length<2||me!==state.host}
-function renderGame(){ $('lobby').classList.add('hidden');$('game').classList.remove('hidden');const t=state.players[state.current];$('turnPill').textContent='Turn: '+t.name;$('colorPill').textContent='Color: '+state.currentColor;$('countsPill').textContent=state.players.map(p=>p.name+': '+p.count).join(' • ');$('gamePlayers').innerHTML=state.players.map(p=>'<div class="player '+(p.id===me?'me ':'')+(p.id===t.id?'active':'')+'"><b>'+esc(p.name)+'</b><br>'+p.count+' cards</div>').join('');$('topCard').innerHTML=cardHTML(state.top,true);$('hand').innerHTML=state.hand.map(c=>cardHTML(c,false)).join('');if(state.winner){$('overlay').classList.remove('hidden');$('overlay').innerHTML='<div class="modal"><div class="winner">'+esc(state.players.find(p=>p.id===state.winner)?.name||'Player')+' wins!</div><p>Great game, homies.</p><button class="primary" onclick="rematch()">Rematch</button></div>'}else $('overlay').classList.add('hidden')}
-function cardHTML(c,top){return '<div class="card '+c.c+(top?' topcard':'')+'" '+(!top?'onclick="play(\\''+c.id+'\\')"' :'')+'><div class="inner">'+txt(c.v)+'</div></div>'}
-function txt(v){return v==='draw2'?'+2':v==='draw4'?'+4':v==='skip'?'⊘':v==='reverse'?'↻':v}
-function play(id){if(!state||state.players[state.current].id!==me){msg('Wait for your turn.');return}let c=state.hand.find(x=>x.id===id);if(c?.c==='wild'){showColors(id);return}send({type:'play',cardId:id})}
-function showColors(id){$('overlay').classList.remove('hidden');$('overlay').innerHTML='<div class="modal"><h2>Choose a color</h2><div class="colors"><button class="c-red" onclick="color(\\''+id+'\\',\\'red\\')">Red</button><button class="c-yellow" onclick="color(\\''+id+'\\',\\'yellow\\')">Yellow</button><button class="c-green" onclick="color(\\''+id+'\\',\\'green\\')">Green</button><button class="c-blue" onclick="color(\\''+id+'\\',\\'blue\\')">Blue</button></div></div>'}
-function color(id,c){$('overlay').classList.add('hidden');send({type:'play',cardId:id,color:c})}
-function draw(){send({type:'draw'})}
-function uno(){msg(state?.hand?.length===1?'UNO!':'UNO is available when you have one card.')}
-function startGame(){send({type:'start'})}
-function rematch(){send({type:'rematch'})}
-function copyCode(){navigator.clipboard?.writeText(roomCode);msg('Room code copied: '+roomCode)}
-function msg(s){$('homeMsg').textContent=s;$('lobbyMsg').textContent=s;$('gameMsg').textContent=s}
-function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-</script></body></html>
+
+
+function connect(){
+
+  if(
+    ws &&
+    (
+      ws.readyState===WebSocket.OPEN ||
+      ws.readyState===WebSocket.CONNECTING
+    )
+  ){
+    return;
+  }
+
+  const proto =
+    location.protocol==='https:'
+    ? 'wss://'
+    : 'ws://';
+
+  ws=new WebSocket(
+    proto+
+    location.host+
+    '/ws'
+  );
+
+
+  ws.onopen=()=>{
+
+    msg('Connected.');
+
+    if(window.pending){
+
+      const p=window.pending;
+
+      window.pending=null;
+
+      ws.send(
+        JSON.stringify(p)
+      );
+
+    }
+
+  };
+
+
+  ws.onmessage=e=>{
+
+    handle(
+      JSON.parse(e.data)
+    );
+
+  };
+
+
+  ws.onerror=()=>{
+
+    msg(
+      'WebSocket connection failed. Please refresh once.'
+    );
+
+  };
+
+
+  ws.onclose=()=>{
+
+    ws=null;
+
+    msg(
+      'Connection lost. Refresh to reconnect.'
+    );
+
+  };
+
+}
+
+
+function send(o){
+
+  if(
+    ws &&
+    ws.readyState===WebSocket.OPEN
+  ){
+
+    ws.send(
+      JSON.stringify(o)
+    );
+
+    return;
+  }
+
+  window.pending=o;
+
+  connect();
+
+}
+
+
+function getName(){
+
+  return (
+    $('name').value ||
+    'Player'
+  )
+  .trim()
+  .slice(0,20);
+
+}
+
+
+function createRoom(){
+
+  window.pending={
+    type:'create',
+    name:getName()
+  };
+
+  connect();
+
+}
+
+
+function joinRoom(){
+
+  const code=
+    $('codeInput')
+    .value
+    .trim()
+    .toUpperCase();
+
+  if(!code){
+
+    msg(
+      'Enter the room code first.'
+    );
+
+    return;
+  }
+
+
+  window.pending={
+    type:'join',
+    name:getName(),
+    code:code
+  };
+
+  connect();
+
+}
+
+
+function handle(m){
+
+  if(m.type==='error'){
+
+    msg(
+      m.message
+    );
+
+    return;
+  }
+
+
+  if(m.type==='joined'){
+
+    me=m.playerId;
+
+    roomCode=m.code;
+
+    window.pending=null;
+
+    $('home')
+    .classList
+    .add('hidden');
+
+    $('lobby')
+    .classList
+    .remove('hidden');
+
+    $('roomCode')
+    .textContent=roomCode;
+
+    return;
+  }
+
+
+  if(m.type==='state'){
+
+    state=m;
+
+    render();
+
+  }
+
+}
+
+
+function render(){
+
+  if(
+    !state.started &&
+    !state.winner
+  ){
+
+    renderLobby();
+
+    return;
+  }
+
+  renderGame();
+
+}
+
+
+function renderLobby(){
+
+  $('lobby')
+  .classList
+  .remove('hidden');
+
+  $('game')
+  .classList
+  .add('hidden');
+
+
+  $('players')
+  .innerHTML=
+    state.players
+    .map(p=>
+
+      '<div class="player '+
+      (p.id===me?'me':'')+
+      '">'+
+
+      '<b>'+
+      esc(p.name)+
+      '</b><br>'+
+
+      '<span class="small">'+
+
+      (
+        p.id===state.host
+        ? 'HOST · '
+        : ''
+      )+
+
+      (
+        p.connected
+        ? 'Online'
+        : 'Offline'
+      )+
+
+      '</span></div>'
+
+    )
+    .join('');
+
+
+  $('startBtn').disabled =
+    state.players.length<2 ||
+    me!==state.host;
+
+}
+
+
+function renderGame(){
+
+  $('lobby')
+  .classList
+  .add('hidden');
+
+  $('game')
+  .classList
+  .remove('hidden');
+
+
+  const t=
+    state.players[state.current];
+
+
+  $('turnPill')
+  .textContent=
+    'Turn: '+t.name;
+
+
+  $('colorPill')
+  .textContent=
+    'Color: '+state.currentColor;
+
+
+  $('countsPill')
+  .textContent=
+    state.players
+    .map(
+      p=>p.name+': '+p.count
+    )
+    .join(' • ');
+
+
+  $('gamePlayers')
+  .innerHTML=
+    state.players
+    .map(p=>
+
+      '<div class="player '+
+      (p.id===me?'me ':'')+
+      (p.id===t.id?'active':'')+
+      '">'+
+
+      '<b>'+
+      esc(p.name)+
+      '</b><br>'+
+
+      p.count+
+      ' cards</div>'
+
+    )
+    .join('');
+
+
+  $('topCard')
+  .innerHTML=
+    cardHTML(
+      state.top,
+      true
+    );
+
+
+  $('hand')
+  .innerHTML=
+    state.hand
+    .map(
+      c=>cardHTML(c,false)
+    )
+    .join('');
+
+
+  if(state.winner){
+
+    $('overlay')
+    .classList
+    .remove('hidden');
+
+
+    const winner=
+      state.players.find(
+        p=>p.id===state.winner
+      );
+
+
+    $('overlay')
+    .innerHTML=
+
+      '<div class="modal">'+
+
+      '<div class="winner">'+
+
+      esc(
+        winner?.name ||
+        'Player'
+      )+
+
+      ' wins!</div>'+
+
+      '<p>Great game, homies.</p>'+
+
+      '<button class="primary" onclick="rematch()">'+
+
+      'Rematch'+
+
+      '</button>'+
+
+      '</div>';
+
+  }else{
+
+    $('overlay')
+    .classList
+    .add('hidden');
+
+  }
+
+}
+
+
+function cardHTML(c,top){
+
+  return (
+
+    '<div class="card '+
+    c.c+
+    (top?' topcard':'')+
+    '" '+
+
+    (
+      !top
+      ?
+      'onclick="play(\''+
+      c.id+
+      '\')"'
+      :
+      ''
+    )+
+
+    '>'+
+
+    '<div class="inner">'+
+    txt(c.v)+
+    '</div>'+
+
+    '</div>'
+
+  );
+
+}
+
+
+function txt(v){
+
+  if(v==='draw2')
+    return '+2';
+
+  if(v==='draw4')
+    return '+4';
+
+  if(v==='skip')
+    return '⊘';
+
+  if(v==='reverse')
+    return '↻';
+
+  return v;
+
+}
+
+
+function play(id){
+
+  if(
+    !state ||
+    state.players[state.current].id!==me
+  ){
+
+    msg(
+      'Wait for your turn.'
+    );
+
+    return;
+  }
+
+
+  const c=
+    state.hand.find(
+      x=>x.id===id
+    );
+
+
+  if(c?.c==='wild'){
+
+    showColors(id);
+
+    return;
+  }
+
+
+  send({
+
+    type:'play',
+
+    cardId:id
+
+  });
+
+}
+
+
+function showColors(id){
+
+  $('overlay')
+  .classList
+  .remove('hidden');
+
+
+  $('overlay')
+  .innerHTML=
+
+    '<div class="modal">'+
+
+    '<h2>Choose a color</h2>'+
+
+    '<div class="colors">'+
+
+    '<button class="c-red" onclick="color(\''+
+    id+
+    '\',\'red\')">Red</button>'+
+
+    '<button class="c-yellow" onclick="color(\''+
+    id+
+    '\',\'yellow\')">Yellow</button>'+
+
+    '<button class="c-green" onclick="color(\''+
+    id+
+    '\',\'green\')">Green</button>'+
+
+    '<button class="c-blue" onclick="color(\''+
+    id+
+    '\',\'blue\')">Blue</button>'+
+
+    '</div>'+
+
+    '</div>';
+
+}
+
+
+function color(id,c){
+
+  $('overlay')
+  .classList
+  .add('hidden');
+
+
+  send({
+
+    type:'play',
+
+    cardId:id,
+
+    color:c
+
+  });
+
+}
+
+
+function draw(){
+
+  send({
+    type:'draw'
+  });
+
+}
+
+
+function uno(){
+
+  if(
+    state &&
+    state.hand &&
+    state.hand.length===1
+  ){
+
+    msg('UNO!');
+
+  }else{
+
+    msg(
+      'UNO is available when you have one card.'
+    );
+
+  }
+
+}
+
+
+function startGame(){
+
+  send({
+    type:'start'
+  });
+
+}
+
+
+function rematch(){
+
+  send({
+    type:'rematch'
+  });
+
+}
+
+
+function copyCode(){
+
+  if(
+    navigator.clipboard &&
+    roomCode
+  ){
+
+    navigator.clipboard.writeText(
+      roomCode
+    );
+
+  }
+
+  msg(
+    'Room code copied: '+roomCode
+  );
+
+}
+
+
+function msg(s){
+
+  $('homeMsg').textContent=s;
+
+  $('lobbyMsg').textContent=s;
+
+  $('gameMsg').textContent=s;
+
+}
+
+
+function esc(s){
+
+  return String(s)
+    .replace(
+      /[&<>"']/g,
+      m=>({
+
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;',
+        "'":'&#39;'
+
+      }[m])
+    );
+
+}
+
+</script>
+
+</body>
+</html>
